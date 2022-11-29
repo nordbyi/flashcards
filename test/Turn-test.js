@@ -61,9 +61,3 @@ describe("Turn", function () {
     expect(turn2.giveFeedback()).to.equal('incorrect!')
   })
 });
-
-// indicate if a user guess does not equal
-// tell you if guess is incorrect
-
-
-// push to github! Delete this beforehand!
