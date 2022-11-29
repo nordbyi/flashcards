@@ -40,6 +40,6 @@ describe('Deck', function () {
 
   it('Should be initialized with a deck of Card(s)', () => {
     expect(deck.cards.length).to.equal(3)
-    expect(deck.cards[0]).to.deeply.equal(card)
+    expect(deck.cards[0]).to.deep.equal(card)
   })
 })
