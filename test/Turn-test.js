@@ -41,5 +41,8 @@ describe("Turn", function () {
     expect(turn.returnGuess()).to.equal(turn.userGuess);
   });
 
+  it("Should be able to return the card", () => {
+    expect(turn.returnCard()).to.equal(turn.card);
+  });
 
 });
