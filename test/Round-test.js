@@ -2,12 +2,17 @@ const chai = require("chai");
 const expect = chai.expect;
 
 const Round = require('../src/Round')
+const Deck = require('../src/Deck')
+const Card = require('../src/Card') // need this?
+const data = require('../src/data')
 
 describe('Round', function () {
   let round
-  
+  let deck
+
   beforeEach( function () {
     round = new Round()
+    deck = new Deck(data.slice(0, 3).map(el => el.id, el.question, el.answers, el.correctAnswer))
   })
   
   it("Should be a function", () => {
