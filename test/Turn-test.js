@@ -45,4 +45,8 @@ describe("Turn", function () {
     expect(turn.returnCard()).to.equal(turn.card);
   });
 
+  it("Should be able to indicate if a userGuess equals the correct answer in the card", () => {
+    expect(turn.evaluateGuess()).to.equal(true);
+    expect(turn2.evaluateGuess()).to.equal(false);
+  });
 });
