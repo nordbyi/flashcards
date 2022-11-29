@@ -22,4 +22,8 @@ describe('Round', function () {
   it("Should be an instance of Deck", () => {
     expect(round).to.be.an.instanceof(Round);
   });
+
+  it('Should have a current Card', () => {
+    expect(round.currentCard).to.deep.equal(deck.cards[0])
+  })
 })
