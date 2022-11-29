@@ -49,4 +49,9 @@ describe("Turn", function () {
     expect(turn.evaluateGuess()).to.equal(true);
     expect(turn2.evaluateGuess()).to.equal(false);
   });
+
+  it('Should be able to tell you if the guess is correct', () => {
+    expect(turn.giveFeedback()).to.equal('correct!')
+    expect(turn2.giveFeedback()).to.equal('incorrect!')
+  })
 });
