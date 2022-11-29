@@ -23,9 +23,11 @@ const testData = [{
 
 describe('Deck', function () {
   let deck
+  let card
 
   beforeEach(function () {
     deck = new Deck(testData.map(el => new Card(el.id, el.question, el.answers, el.correctAnswer)))
+    card = new Card(testData[0].id, testData[0].question, testData[0].answers, testData[0].correctAnswer)
   })
 
   it('Should be a function', () => {
@@ -34,5 +36,10 @@ describe('Deck', function () {
 
   it('Should be an instance of Deck', () => {
     expect(deck).to.be.an.instanceof(Deck);
+  })
+
+  it('Should be initialized with a deck of Card(s)', () => {
+    expect(deck.cards.length).to.equal(3)
+    expect(deck.cards[0]).to.deeply.equal(card)
   })
 })
