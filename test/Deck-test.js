@@ -2,6 +2,7 @@ const chai = require("chai");
 const expect = chai.expect;
 
 const Deck = require("../src/Deck");
+const Card = require("../src/Card")
 
 const testData = [{
   "id": 1,
@@ -24,7 +25,7 @@ describe('Deck', function () {
   let deck
 
   beforeEach(function () {
-    deck = new Deck()
+    deck = new Deck(testData.map(el => new Card(el.id, el.question, el.answers, el.correctAnswer)))
   })
 
   it('Should be a function', () => {
