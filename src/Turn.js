@@ -11,6 +11,10 @@ class Turn {
   returnCard() {
     return this.card;
   }
+
+  evaluateGuess() {
+    return this.userGuess === this.card.correctAnswer
+  }
 }
 
 module.exports = Turn;
