@@ -105,9 +105,9 @@ describe("Round", function () {
 
   it('Should be able to tell you when the round is over and what percent of questions you answered correctly', () => {
     round.takeTurn('object')
-    round.takeTurn('turtles')
+    round.takeTurn('array')
     round.takeTurn('dinosaurs')
-    expect(round.endRound()).to.equal('** Round over! ** You answered 33% of the questions correctly!')
+    expect(round.endRound()).to.equal('** Round over! ** You answered 67% of the questions correctly!')
 
     round2.takeTurn('tigers')
     round2.takeTurn('turtles')
