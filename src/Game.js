@@ -21,7 +21,8 @@ class Game {
   }
 
   createRound() {
-    return new Round(this.createDeck())
+    this.currentRound = new Round(this.createDeck())
+    return this.currentRound
   }
 
   printMessage(deck, round) {
