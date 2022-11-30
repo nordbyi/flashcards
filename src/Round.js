@@ -26,6 +26,10 @@ class Round {
     return (((this.incorrectGuesses.length / this.turns - 1) * -1) * 100).toFixed() * 1
     // adjust for floating point errors
   }
+
+  endRound() {
+    return `** Round over! ** You answered ${this.calculatePercentageCorrect()}% of the questions correctly!`
+  }
 }
 
 module.exports = Round;
