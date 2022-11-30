@@ -20,6 +20,10 @@ class Game {
     return new Deck(this.createCards())
   }
 
+  createRound() {
+    return new Round(this.createDeck())
+  }
+
   printMessage(deck, round) {
     console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
