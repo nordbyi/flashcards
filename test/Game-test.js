@@ -46,7 +46,8 @@ describe("Game", function () {
     expect(newRound.incorrectGuesses).to.deep.equal([])
   })
 
-  it('Should update currentRound when a Round is instantiated' ,() => {
+  it('Should update currentRound when a Round is instantiated',() => {
+    game.createRound()
     expect(game.currentRound).to.be.an.instanceof(Round)
   })
   // it('Should be able to start a game by combining it\'s methods', () => {
