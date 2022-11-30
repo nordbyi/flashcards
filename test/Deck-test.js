@@ -53,7 +53,7 @@ describe("Deck", function () {
     expect(deck).to.be.an.instanceof(Deck);
   });
 
-  it("Should be initialized with a deck of Card(s)", () => {
+  it("Should be initialized with a Deck of Card(s)", () => {
     expect(deck.cards.length).to.equal(3);
     expect(deck.cards[0]).to.deep.equal(card);
   });
