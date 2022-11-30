@@ -31,7 +31,7 @@ describe("Game", function () {
   })
 
   it('Should be able to create Cards', () => {
-    expect(game.createCards()[0]).to.deep.equal(deck[0])
+    expect(game.createCards()[0]).to.deep.equal(deck.cards[0])
   })
 
 })
