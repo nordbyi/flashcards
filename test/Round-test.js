@@ -9,6 +9,7 @@ const data = require("../src/data");
 
 describe("Round", function () {
   let round;
+  let round2;
   let deck;
   let turn
 
@@ -19,6 +20,7 @@ describe("Round", function () {
       )
     );
     round = new Round(deck);
+    round2 = new Round(deck)
   });
 
   it("Should be a function", () => {
@@ -93,13 +95,25 @@ describe("Round", function () {
     round.takeTurn('turtles')
     round.takeTurn('dinosaurs')
     expect(round.calculatePercentageCorrect()).to.equal(33)
+
+    round2.takeTurn('object')
+    round2.takeTurn('array')
+    round2.takeTurn('mutator method')
+    expect(round2.calculatePercentageCorrect()).to.equal(100)
+
   })
 
   it('Should be able to tell you when the round is over and what percent of questions you answered correctly', () => {
     round.takeTurn('object')
     round.takeTurn('turtles')
     round.takeTurn('dinosaurs')
-    expect(turn.endRound()).to.equal('** Round over! ** You answered 33% of the questions correctly!')
+    expect(round.endRound()).to.equal('** Round over! ** You answered 33% of the questions correctly!')
+
+    round2.takeTurn('tigers')
+    round2.takeTurn('turtles')
+    round2.takeTurn('dinosaurs')
+    expect(round2.endRound()).to.equal('** Round over! ** You answered 0% of the questions correctly!')
+
   })
 });
 
