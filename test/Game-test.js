@@ -33,4 +33,8 @@ describe("Game", function () {
   it("Should be able to create Cards", () => {
     expect(game.createCards().slice(0, 3)).to.deep.equal(deck.cards);
   });
+
+  it('Should be able create a Deck from Cards', () => {
+    expect(game.createDeck().countCards()).to.equal(30)
+  })
 });
