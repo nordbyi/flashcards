@@ -32,6 +32,12 @@ describe("Round", function () {
   });
 
   it('Should be able to return the currentCard', () => {
-    expect(round.returnCurrentCard().to.deep(deck.cards[0]))
+    expect(round.returnCurrentCard()).to.deep.equal(deck.cards[0])
   })
+
+  it('Should have a turns property', () => {
+    expect(round.turns).to.equal(0)
+  })
+
+
 });
