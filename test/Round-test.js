@@ -61,8 +61,12 @@ describe("Round", function () {
     expect(round.incorrectGuesses[0]).to.equal(1)
   })
 
-  it('Should return the feedback as to whether the guess is correct or not', () => {
+  it('Should return the feedback if the guess is correct', () => {
     expect(round.takeTurn('object')).to.equal('correct!')
+  })
+
+  it('Should return the feedback if the guess is incorrect', () => {
+    expect(round.takeTurn('array')).to.equal('correct!')
   })
   // test correct feedback
   // test incorrect feedback
