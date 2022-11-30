@@ -41,8 +41,12 @@ describe("Round", function () {
     expect(round.turns).to.equal(0)
   })
 
+  it('Should have an incorrectGuesses property', () => {
+    expect(round.incorrectGuesses).to.equal([])
+  })
+
   it('Should be able to take a turn and update turns count', () => {
-    round.takeTurn()
+    round.takeTurn() // give it some arguments to test guess
     expect(round.turns).to.equal(1)
   })
 
@@ -50,9 +54,9 @@ describe("Round", function () {
     expect(round.currentCard).to.deep.equal(deck.cards[1])
   })
 
-  it('Should have an incorrectGuesses property', () => {
-    expect(round.incorrectGuesses).to.equal([])
+  it('Should store the ids of incorrect guesses', () => {
+    expect(round.incorrectGuesses[0]).to.equal(1)
   })
-
- 
+  // test correct feedback
+  // test incorrect feedback
 });
