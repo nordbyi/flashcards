@@ -47,17 +47,22 @@ describe("Round", function () {
 
   it('Should be able to take a turn and update turns count', () => {
     console.log(round.currentCard)
-    round.takeTurn('array', deck[0])
+    round.takeTurn('array')
     expect(round.turns).to.equal(1)
   })
 
   it('Should be able to take a turn and update the currentCard', () => {
-    round.takeTurn('array', deck[0])
+    round.takeTurn('array')
     expect(round.currentCard).to.deep.equal(deck.cards[1])
   })
 
   it('Should store the ids of incorrect guesses', () => {
+    round.takeTurn('array')
     expect(round.incorrectGuesses[0]).to.equal(1)
+  })
+
+  it('Should return the feedback as to whether the guess is correct or not', () => {
+    expect(round.takeTurn('object')).to.equal('correct!')
   })
   // test correct feedback
   // test incorrect feedback
