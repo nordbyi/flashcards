@@ -70,16 +70,30 @@ describe("Round", function () {
     expect(round.incorrectGuesses[0]).to.equal(1)
   })
 
-  it('Should not store the id of correct guesses', () => {
-    round.takeTurn('array')
+  it('Should not store the ids of correct guesses', () => {
+    round.takeTurn('object')
     expect(round.incorrectGuesses).to.deep.equal([])
   })
 
-  it('Should return the feedback if the guess is correct', () => {
+  it('Should return the right feedback if the guess is correct', () => {
     expect(round.takeTurn('object')).to.equal('correct!')
   })
 
-  it('Should return the feedback if the guess is incorrect', () => {
+  it('Should return the right feedback if the guess is incorrect', () => {
     expect(round.takeTurn('array')).to.equal('incorrect!')
   })
+
+  it('Should be able to return the percentage of correct guesses', () => {
+    round.takeTurn('object')
+    expect(round.calculatePercentageCorrect()).to.equal(100)
+  })
+
+  it('Should be able to return the percentage of correct guesses after multiple guesses', () => {
+    round.takeTurn('object')
+    round.takeTurn('turtles')
+    round.takeTurn('dinosaurs')
+    expect(round.calculatePercentageCorrect()).to.equal(33)
+  })
 });
+
+// test multiple take turn calls for their returns and incorrectAnswers array
