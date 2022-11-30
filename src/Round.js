@@ -15,12 +15,16 @@ class Round {
   takeTurn(guess) {
     this.turns++;
     const turn = new Turn(guess, this.currentCard)
-    console.log(turn)
     if(!turn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id)
     }
     this.currentCard = this.deck.cards[this.turns]
     return turn.giveFeedback()
+  }
+
+  calculatePercentageCorrect() {
+    return (((this.incorrectGuesses.length / this.turns - 1) * -1) * 100).toFixed() * 1
+    // adjust for floating point errors
   }
 }
 
