@@ -94,6 +94,13 @@ describe("Round", function () {
     round.takeTurn('dinosaurs')
     expect(round.calculatePercentageCorrect()).to.equal(33)
   })
+
+  it('Should be able to tell you when the round is over and what percent of questions you answered correctly', () => {
+    round.takeTurn('object')
+    round.takeTurn('turtles')
+    round.takeTurn('dinosaurs')
+    expect(turn.endRound()).to.equal('** Round over! ** You answered 33% of the questions correctly!')
+  })
 });
 
 // test multiple take turn calls for their returns and incorrectAnswers array
