@@ -37,4 +37,16 @@ describe("Game", function () {
   it('Should be able create a Deck from Cards', () => {
     expect(game.createDeck().countCards()).to.equal(30)
   })
+
+  it('Should be able to create a new Round', () => {
+    const newRound = game.createRound()
+    expect(newRound.deck.cards.slice(0, 3)).to.deep.equal(deck.cards)
+    expect(newRound.currentCard).to.deep.equal(deck.cards[0])
+    expect(newRound.turns).to.equal(0)
+    expect(newRound.incorrectGuesses).to.deep.equal([])
+  })
+
+  // it('Should update currentRound when a Round is instantiated' ,() => {
+
+  // })
 });
