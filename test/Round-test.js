@@ -39,5 +39,8 @@ describe("Round", function () {
     expect(round.turns).to.equal(0)
   })
 
-
+  it('Should be able to take a turn', () => {
+    round.takeTurn()
+    expect(round.turns).to.equal(1)
+  })
 });
