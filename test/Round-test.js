@@ -45,7 +45,12 @@ describe("Round", function () {
     expect(round.incorrectGuesses).to.deep.equal([])
   })
 
-  it('Should be able to take a turn and update turns count', () => {
+  it('Should update turn count on correct guess', () => {
+    round.takeTurn('object')
+    expect(round.turns).to.equal(1)
+  })
+
+  it('Should update turn count on incorrect guess', () => {
     round.takeTurn('array')
     expect(round.turns).to.equal(1)
   })
