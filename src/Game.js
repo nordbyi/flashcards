@@ -16,6 +16,10 @@ class Game {
     return data.prototypeData.map(el => new Card(el.id, el.question, el.answers, el.correctAnswer))
   }
 
+  createDeck() {
+    return new Deck(this.createCards())
+  }
+
   printMessage(deck, round) {
     console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
