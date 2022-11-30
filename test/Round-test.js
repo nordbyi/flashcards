@@ -4,7 +4,7 @@ const expect = chai.expect;
 const Round = require("../src/Round");
 const Deck = require("../src/Deck");
 const Turn = require("../src/Turn")
-const Card = require("../src/Card"); // need this?
+const Card = require("../src/Card");
 const data = require("../src/data");
 
 describe("Round", function () {
@@ -42,15 +42,17 @@ describe("Round", function () {
   })
 
   it('Should have an incorrectGuesses property', () => {
-    expect(round.incorrectGuesses).to.equal([])
+    expect(round.incorrectGuesses).to.deep.equal([])
   })
 
   it('Should be able to take a turn and update turns count', () => {
-    round.takeTurn() // give it some arguments to test guess
+    console.log(round.currentCard)
+    round.takeTurn('array', deck[0])
     expect(round.turns).to.equal(1)
   })
 
   it('Should be able to take a turn and update the currentCard', () => {
+    round.takeTurn('array', deck[0])
     expect(round.currentCard).to.deep.equal(deck.cards[1])
   })
 
