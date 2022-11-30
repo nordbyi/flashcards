@@ -12,8 +12,14 @@ class Round {
     return this.currentCard;
   }
 
-  takeTurn() {
+  takeTurn(guess) {
     this.turns++;
+    const turn = new Turn(guess, this.currentCard)
+    console.log(turn)
+    if(!turn.evaluateGuess()) {
+      this.incorrectGuesses.push(this.currentCard.id)
+      console.log(this.incorrectGuesses[0])
+    }
     this.currentCard = this.deck.cards[this.turns]
   }
 }
