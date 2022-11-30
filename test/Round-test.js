@@ -39,8 +39,12 @@ describe("Round", function () {
     expect(round.turns).to.equal(0)
   })
 
-  it('Should be able to take a turn', () => {
+  it('Should be able to take a turn and update turns count', () => {
     round.takeTurn()
     expect(round.turns).to.equal(1)
+  })
+
+  it('Should be able to take a turn and update the currentCard', () => {
+    expect(round.currentCard).to.deep.equal(deck.cards[1])
   })
 });
