@@ -50,12 +50,17 @@ describe("Round", function () {
     expect(round.turns).to.equal(1)
   })
 
-  it('Should update turn count on incorrect guess', () => {
+  it('Should also update turn count on incorrect guess', () => {
     round.takeTurn('array')
     expect(round.turns).to.equal(1)
   })
 
-  it('Should be able to take a turn and update the currentCard', () => {
+  it('Should update the currentCard on correct guess', () => {
+    round.takeTurn('object')
+    expect(round.currentCard).to.deep.equal(deck.cards[1])
+  })
+
+  it('Should also update the currentCard on incorrect guess', () => {
     round.takeTurn('array')
     expect(round.currentCard).to.deep.equal(deck.cards[1])
   })
