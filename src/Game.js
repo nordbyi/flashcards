@@ -12,6 +12,12 @@ class Game {
     this.currentRound
   }
 
+  start(){
+    this.createRound()
+    this.printMessage()
+    this.printQuestion()
+  }
+
   createCards() {
     return data.prototypeData.map(el => new Card(el.id, el.question, el.answers, el.correctAnswer))
   }
