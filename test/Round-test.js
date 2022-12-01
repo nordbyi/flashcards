@@ -3,7 +3,6 @@ const expect = chai.expect;
 
 const Round = require("../src/Round");
 const Deck = require("../src/Deck");
-const Turn = require("../src/Turn")
 const Card = require("../src/Card");
 const data = require("../src/data");
 
@@ -11,7 +10,7 @@ describe("Round", function () {
   let round;
   let round2;
   let deck;
-  let turn
+
 
   beforeEach(function () {
     deck = new Deck(
@@ -116,5 +115,3 @@ describe("Round", function () {
 
   })
 });
-
-// test multiple take turn calls for their returns and incorrectAnswers array
