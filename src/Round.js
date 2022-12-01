@@ -7,6 +7,7 @@ class Round {
     this.turns = 0;
     this.incorrectGuesses = [];
     this.startTime = Date.now()
+    this.endTime
   }
 
   returnCurrentCard() {
@@ -28,8 +29,10 @@ class Round {
   }
 
   endRound() {
+    this.endTime = Date.now()
     const roundMessage = `** Round over! ** You answered ${this.calculatePercentageCorrect()}% of the questions correctly!`
     console.log(roundMessage)
+    console.log(`You completed the game in ${this.endTime - this.startTime} milliseconds`)
     return roundMessage
   }
 
