@@ -119,10 +119,7 @@ describe("Round", function () {
     expect(round.startTime).to.be.a('number')
   })
 
-  // it('Should know when a game ends' , () => {
-
-  //   expect(game.endTime).to.be.a('number')
-  // })
-
-
+  it('Should know when a game ends' , () => {
+    expect(round.endTime).to.be.a('number')
+  })
 });
