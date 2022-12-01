@@ -123,4 +123,9 @@ describe("Round", function () {
     round.endRound()
     expect(round.endTime).to.be.a('number')
   })
+
+  it('Should tell you how long it took to complete the test', () => {
+    expect(round.finalTime()).to.be.a('string')
+  })
+
 });
