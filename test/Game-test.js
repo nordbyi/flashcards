@@ -3,16 +3,13 @@ const expect = chai.expect;
 
 const Round = require("../src/Round");
 const Deck = require("../src/Deck");
-const Turn = require("../src/Turn");
 const Card = require("../src/Card");
-const data = require("../src/data");
 const Game = require("../src/Game");
+const data = require("../src/data");
 
 describe("Game", function () {
   let round;
-  let round2;
   let deck;
-  let turn;
   let game;
 
   beforeEach(function () {
@@ -22,7 +19,6 @@ describe("Game", function () {
         .map((el) => new Card(el.id, el.question, el.answers, el.correctAnswer))
     );
     round = new Round(deck);
-    round2 = new Round(deck);
     game = new Game();
   });
 
@@ -50,8 +46,4 @@ describe("Game", function () {
     game.createRound()
     expect(game.currentRound).to.be.an.instanceof(Round)
   })
-  // it('Should be able to start a game by combining it\'s methods', () => {
-
-  // })
-  // })
 });
