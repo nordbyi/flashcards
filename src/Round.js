@@ -24,12 +24,12 @@ class Round {
 
   calculatePercentageCorrect() {
     return (((this.incorrectGuesses.length / this.turns - 1) * -1) * 100).toFixed() * 1
-    // adjust for floating point errors
   }
 
   endRound() {
-    console.log(`** Round over! ** You answered ${this.calculatePercentageCorrect()}% of the questions correctly!`)
-    return `** Round over! ** You answered ${this.calculatePercentageCorrect()}% of the questions correctly!`
+    const roundMessage = `** Round over! ** You answered ${this.calculatePercentageCorrect()}% of the questions correctly!`
+    console.log(roundMessage)
+    return roundMessage
   }
 }
 
