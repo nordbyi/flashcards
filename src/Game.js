@@ -4,7 +4,6 @@ const util = require('./util');
 
 const Round = require("./Round");
 const Deck = require("./Deck");
-const Turn = require("./Turn")
 const Card = require("./Card");
 
 class Game {
@@ -14,8 +13,8 @@ class Game {
 
   start(){
     this.createRound()
-    this.printMessage()
-    this.printQuestion()
+    this.printMessage(this.currentRound.deck)
+    this.printQuestion(this.currentRound)
   }
 
   createCards() {
