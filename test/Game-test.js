@@ -46,4 +46,8 @@ describe("Game", function () {
     game.createRound()
     expect(game.currentRound).to.be.an.instanceof(Round)
   })
+
+  it('Should know when a game started' , () => {
+    expect(game.startTime).to.be.a('number')
+  })
 });
