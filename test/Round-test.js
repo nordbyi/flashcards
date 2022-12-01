@@ -120,6 +120,7 @@ describe("Round", function () {
   })
 
   it('Should know when a game ends' , () => {
+    round.endRound()
     expect(round.endTime).to.be.a('number')
   })
 });
