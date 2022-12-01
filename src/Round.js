@@ -6,6 +6,7 @@ class Round {
     this.currentCard = this.deck.cards[0];
     this.turns = 0;
     this.incorrectGuesses = [];
+    this.startTime = Date.now()
   }
 
   returnCurrentCard() {
@@ -31,6 +32,7 @@ class Round {
     console.log(roundMessage)
     return roundMessage
   }
+
 }
 
 module.exports = Round;
