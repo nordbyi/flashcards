@@ -114,4 +114,18 @@ describe("Round", function () {
     expect(round2.endRound()).to.equal('** Round over! ** You answered 0% of the questions correctly!')
 
   })
+
+  it('Should know when a game started' , () => {
+    expect(round.startTime).to.be.a('number')
+  })
+
+  it('Should know when a game ends' , () => {
+    round.endRound()
+    expect(round.endTime).to.be.a('number')
+  })
+
+  it('Should tell you how long it took to complete the test', () => {
+    expect(round.finalTime()).to.be.a('string')
+  })
+
 });
